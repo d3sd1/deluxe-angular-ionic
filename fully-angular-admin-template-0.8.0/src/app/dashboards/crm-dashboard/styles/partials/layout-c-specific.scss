@@ -1,0 +1,45 @@
+@import 'shared';
+
+:host-context(.layout-c) {
+  --overlap-padding: 80px;
+
+  .highlighted-section {
+    --highlighted-background: #{palette-color('primary')};
+    --heading-color: #{palette-color('primary-contrast')};
+
+    padding-bottom: var(--overlap-padding);
+
+    // Next sibling
+    & + * {
+      margin-top: calc(var(--overlap-padding) * -1);
+    }
+
+    .highlighted-stats-visualization {
+      padding-bottom: 30px;
+
+      .stat-item {
+        --stat-item-background: transparent;
+        --stat-item-color: #{palette-color('primary-contrast')};
+        --stat-item-alt-color: #{palette-color('primary-contrast')};
+        --stat-item-icon-color: #{palette-color('primary-contrast')};
+        --stat-trend-color: #{palette-color('primary-contrast')};
+
+        .stat-trend {
+          &.positive-trend {
+            --stat-trend-color: #{palette-color('primary-contrast')};
+          }
+          &.negative-trend {
+            --stat-trend-color: #{palette-color('primary-contrast')};
+          }
+        }
+      }
+    }
+
+    .visualization-heading {
+      --visualization-heading-color: #{palette-color('primary-contrast')};
+      --visualization-heading-action-color: #{palette-color('primary-contrast', 0.8)};
+      --visualization-heading-action-active-color: #{palette-color('primary-contrast')};
+      --visualization-heading-action-active-border-color: #{palette-color('primary-contrast')};
+    }
+  }
+}
